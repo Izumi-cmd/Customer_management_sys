@@ -19,6 +19,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->unsignedInteger('shop_id')->default(1)->comment('店舗ID');
+            $table->unsignedInteger('role_id')->default(2)->comment('ロールID');
+            $table->string('memo')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
