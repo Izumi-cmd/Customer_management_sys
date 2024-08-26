@@ -13,23 +13,39 @@
 
 ## 環境構築
 1. gitからリポジトリを取得する
+```
+git clone git@github.com:Izumi-cmd/Customer_management_sys.git
+```
 
 2. dockerコンテナを起動
+```
 docker-compose up -d --build
+```
 
 3. 起動中のphpコンテナにアクセス
+```
 docker-compose exec -it php bash
+```
 
 4. 環境設定をコピーしアプリケーションキーを作成する
+```
 cp .env.example .env
 php artisan key:generate
+```
 
 5. 依存パッケージをインストール、アップデートする
+```
+# phpコンテナ内で実施
 composer install
 composer update
+```
 
 6. DBのマイグレーションを実施
+```
 php artisan migrate
+```
 
 7. 初期データをシーディングする。
+```
 php artisan db:seed
+```
