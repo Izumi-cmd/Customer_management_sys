@@ -15,6 +15,7 @@
       <div class="header__title">
         <a href="{{ route('index') }}">顧客管理システム</a>
       </div>
+      @if (Auth::check())
       {{-- メニュー --}}
       <div class="header__nav">
         <nav>
@@ -27,17 +28,12 @@
       </div>
       {{-- ログイン, ログアウト --}}
       <div class="header__btn">
-        @if (Auth::check())
         <form action="{{ route('logout') }}" method="post">
           @csrf
           <button class="header__btn--logout">ログアウト</button>
         </form>
-        @else
-        <a href="{{ route('login') }}">
-          <button class="header__btn--login">ログイン</button>
-        </a>
-        @endif
       </div>
+      @endif
     </div>
   </header>
   <main>
