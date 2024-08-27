@@ -1,0 +1,41 @@
+.user-search {
+  margin-block-end: var(--content-margin-top);
+}
+
+.user-search summary {
+  padding-block: var(--padding);
+}
+
+.user-search__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 16px;
+  padding-inline: var(--padding);
+}
+
+/* user 一覧 */
+.user-list__content {
+  margin-block-start: var(--content-margin-top);
+}
+
+.user-list__table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.user-list__table th,
+.user-list__table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #000;
+}
+
+.user-list__table th {
+  background-color: var(--bg-color);
+  font-weight: bold;
+}
+
+.user-list__table tbody tr:nth-child(even) {
+  background-color: var(--main-color);
+}

@@ -6,7 +6,8 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>@yield('title', '顧客管理システム')</title>
   <link rel="stylesheet" href="{{ asset('css/sanitize.css') }}">
-  <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+  <link rel="stylesheet" href="{{ asset('css/common.css') }}">
+  @yield('css')
 </head>
 <body>
   <header class="header">
@@ -20,7 +21,7 @@
       <div class="header__nav">
         <nav>
           <ul>
-            <li><a href="{{ route('index') }}">社員一覧</a></li>
+            <li><a href="{{ route('users.index') }}">社員一覧</a></li>
             <li><a href="{{ route('index') }}">顧客一覧</a></li>
             <li><a href="{{ route('index') }}">顧客新規登録</a></li>
           </ul>
