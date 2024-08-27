@@ -1,0 +1,59 @@
+:root {
+  --max-width: 1280px;
+  --content-width: calc(var(--max-width) - 2 * var(--padding));
+  --padding: 16px;
+
+  /* font */
+  --font-size-small: 14px;
+  --font-size-medium: 16px;
+  --font-size-large: 18px;
+}
+
+body {
+  width: var(--content-width);
+  margin-inline: auto;
+}
+
+
+/* header */
+.header {
+  width: var(--max-width);
+  margin-inline: auto;
+}
+
+.header__inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+
+  & > :last-child {
+    justify-self: end; /* 最後のコンテンツは右端に配置 */
+  }
+}
+
+.header__title {
+}
+
+.header__nav ul {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 24px;
+}
+
+.header__btn {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* main */
+
+
+/* footer */
+.footer {
+
+}
+.footer__inner {
+  text-align: center;
+}
