@@ -9,6 +9,14 @@
   <div class="login-form__heading">
     <h2>ログイン</h2>
   </div>
+
+  {{-- error message --}}
+  <div class="form__error">
+    @error('email')
+    {{ $message }}
+    @enderror
+  </div>
+
   <form class="form" action="{{ route('login') }}" method="post">
     @csrf
     <div class="form__group">
@@ -18,11 +26,6 @@
       <div class="form__group-content">
         <div class="form__input--text">
           <input type="email" name="email" value="{{ old('email') }}" />
-        </div>
-        <div class="form__error">
-          @error('email')
-          {{ $message }}
-          @enderror
         </div>
       </div>
     </div>

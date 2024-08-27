@@ -1,23 +1,24 @@
 @extends('layouts.app')
-@section('css', 'index')
 
 @section('title', '顧客管理システム')
 
 @section('content')
 <div class="container">
   <div class="container__title">
-    <h1>顧客管理システム</h1>
+    <h1 class="container__title__text">顧客管理システム</h1>
   </div>
   <div class="container__body">
-    <article class="container__body-article">
-      <p>社員一覧</p>
-    </article>
-    <article class="container__body-article">
-      <p>顧客一覧</p>
-    </article>
-    <article class="container__body-article">
-      <p>顧客新規登録</p>
-    </article>
+    <ul class="container__body__list">
+      <li class="container__body__list__item">
+        <a href="{{ route('users.index') }}" class="container__body__list__item__link">社員一覧</a>
+      </li>
+      <li class="container__body__list__item">
+        <a href="" class="container__body__list__item__link">役職一覧</a>
+      </li>
+      <li class="container__body__list__item">
+        <a href="" class="container__body__list__item__link">顧客一覧</a>
+      </li>
+    </ul>
   </div>
 </div>
 @endsection
