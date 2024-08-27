@@ -21,8 +21,8 @@ class UserTableSeeder extends Seeder
             [
                 'id' => 1,
                 'name' => Str::random(10),
-                'email' => Str::random(10).'@example.com',
-                'password' => Hash::make('password'),
+                'email' => 'admin@example.com',
+                'password' => 'admin',
                 'shop_id' => 1,
                 'role_id' => 1,
             ],
