@@ -5,8 +5,6 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 
-
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -24,14 +22,14 @@ use Illuminate\Support\Facades\Auth;
  * Auth認証必要
  */
 Route::middleware('auth')->group(function () {
-  Route::get('/', [IndexController::class, 'index'])->name('index');
+    Route::get('/', [IndexController::class, 'index'])->name('index');
 
-Route::prefix('users')->group(function () {
-    Route::get('/', [UserController::class, 'index'])->name('users.index');
-  });
+    Route::prefix('users')->group(function () {
+        Route::get('/', [UserController::class, 'index'])->name('users.index');
+    });
 });
 
 Route::post('/logout', function () {
-  Auth::logout();
-  return redirect()->route('index');
+    Auth::logout();
+    return redirect()->route('index');
 })->name('logout');
