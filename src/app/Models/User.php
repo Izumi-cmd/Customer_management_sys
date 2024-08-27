@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Models\Shop;
+use App\Models\Role;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -41,4 +43,26 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * 店舗
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function shop()
+    {
+        return $this->belongsTo(Shop::class);
+    }
+
+    /**
+     * 役職
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
+
 }
