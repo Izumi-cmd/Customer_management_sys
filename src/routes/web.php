@@ -2,9 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\IndexController;
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\Auth\RegisterController;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\UserController;
+use Illuminate\Support\Facades\Auth;
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,9 +20,18 @@ use App\Http\Controllers\Auth\LoginController;
 
 // Route::get('/', [AuthController::class, 'index'])->name('index');
 
+/**
+ * Auth認証必要
+ */
 Route::middleware('auth')->group(function () {
   Route::get('/', [IndexController::class, 'index'])->name('index');
-  Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::prefix('users')->group(function () {
+    Route::get('/', [UserController::class, 'index'])->name('users.index');
+  });
 });
-Route::post('/register', [AuthController::class, 'register'])->name('register');
-Route::post('/login', [AuthController::class, 'login'])->name('login');
+
+Route::post('/logout', function () {
+  Auth::logout();
+  return redirect()->route('index');
+})->name('logout');
